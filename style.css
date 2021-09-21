@@ -1,0 +1,104 @@
+:root {
+  --ff-body: Verdana, Geneva, Tahoma, sans-serif;
+
+  --clr-primary-400: hsla(175, 79%, 44%, 90%);
+  --clr-highlight-600: hsla(245, 15%, 48%, 90%);
+  --clr-neutral-100: hsla(172, 16%, 72%, 50%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+  width: auto;
+  font-family: var(--ff-body);
+}
+header {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+body {
+  background: no-repeat url("./assets/subtle-prism.svg");
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  background-color: var(--clr-neutral-100);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px;
+  margin: 1rem 2rem;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.calc-section {
+  margin: 1rem 0.5rem;
+}
+
+.user-input {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+input {
+  font-size: 2rem;
+  max-width: 250px;
+  width: 100%;
+}
+
+.primary-btn {
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: var(--clr-primary-400);
+}
+
+.primary-btn:active {
+  background-color: var(--clr-highlight-600);
+  color: #fff;
+}
+
+.keyboard {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "btn1  btn2 "
+    "btn3  btn4 "
+    "btn5  . ";
+  gap: 1rem;
+}
+
+.primary-btn:nth-child(1) {
+  grid-area: btn1;
+}
+.primary-btn:nth-child(2) {
+  grid-area: btn2;
+}
+.primary-btn:nth-child(3) {
+  grid-area: btn3;
+}
+.primary-btn:nth-child(4) {
+  grid-area: btn4;
+}
+.primary-btn:nth-child(5) {
+  grid-area: btn5;
+}
