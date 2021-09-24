@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
     <title>U2A1 Calculator</title>
   </head>
@@ -13,20 +19,53 @@
     </header>
     <div class="container">
       <div class="calculator">
-        <div class="calc-section user-input">
+        <div class="user-input">
           <div>
-            <input type="number" id="TextInput1" placeholder="0" />
+            <input
+              type="number"
+              id="TextInput1"
+              name="TextInput1"
+              onchange="getValue1()"
+              value="0"
+            />
           </div>
+          <p class="sign">?</p>
           <div>
-            <input type="number" id="TextInput2" placeholder="0" />
+            <input
+              type="number"
+              id="TextInput2"
+              name="TextInput2"
+              onchange="getValue2()"
+              value="0"
+            />
           </div>
         </div>
-        <div class="calc-section keyboard">
-          <button id="ActionButton1" class="primary-btn" onclick="">+</button>
-          <button id="ActionButton2" class="primary-btn" onclick="">-</button>
-          <button id="ActionButton3" class="primary-btn" onclick="">*</button>
-          <button id="ActionButton4" class="primary-btn" onclick="">/</button>
-          <button id="ActionButton5" class="primary-btn" onclick="">!</button>
+        <div class="op-result">
+          <legend style="font-weight: bold">Result</legend>
+          <p class="result">0</p>
+        </div>
+        <div class="keyboard">
+          <button id="ActionButton1" class="primary-btn" onclick="sum()">
+            +
+          </button>
+          <button id="ActionButton2" class="primary-btn" onclick="substract()">
+            -
+          </button>
+          <button id="ActionButton3" class="primary-btn" onclick="multiply()">
+            *
+          </button>
+          <button id="ActionButton4" class="primary-btn" onclick="divide()">
+            /
+          </button>
+          <button id="ActionButton5" class="primary-btn" onclick="factorial()">
+            !
+          </button>
+          <button id="ActionButton6" class="primary-btn" onclick="power()">
+            x^y
+          </button>
+          <button id="ActionButton7" class="primary-btn" onclick="clearScr()">
+            C
+          </button>
         </div>
       </div>
     </div>
@@ -34,6 +73,6 @@
       Background by
       <a href="https://www.svgbackgrounds.com/">SVGBackgrounds.com</a>
     </footer>
-    <script></script>
+    <script src="./JS/calculator.js"></script>
   </body>
 </html>

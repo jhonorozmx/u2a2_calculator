@@ -1,5 +1,6 @@
 :root {
   --ff-body: Verdana, Geneva, Tahoma, sans-serif;
+  --ff-signs: "Work Sans", sans-serif;
 
   --clr-primary-400: hsla(175, 79%, 44%, 90%);
   --clr-highlight-600: hsla(245, 15%, 48%, 90%);
@@ -18,6 +19,7 @@ body {
   width: auto;
   font-family: var(--ff-body);
 }
+
 header {
   text-align: center;
   font-size: 1.5rem;
@@ -30,6 +32,18 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+p,
+label,
+input,
+button {
+  font-size: 2rem;
+}
+
+input {
+  max-width: 250px;
+  width: 100%;
 }
 
 .container {
@@ -47,26 +61,29 @@ body {
   padding: 1rem 2rem;
 }
 
-.calc-section {
-  margin: 1rem 0.5rem;
-}
-
 .user-input {
+  margin: 1rem 0.5rem;
   display: flex;
   justify-content: center;
   width: fit-content;
-  flex-wrap: wrap;
   gap: 1rem;
 }
 
-input {
-  font-size: 2rem;
-  max-width: 250px;
-  width: 100%;
+.op-result {
+  display: none;
+}
+
+.result {
+  word-break: break-all;
+  white-space: normal;
+}
+
+.sign,
+.primary-btn {
+  font-family: var(--ff-signs);
 }
 
 .primary-btn {
-  font-size: 2rem;
   padding: 0.5rem;
   border-radius: 10px;
   background-color: var(--clr-primary-400);
@@ -75,15 +92,20 @@ input {
 .primary-btn:active {
   background-color: var(--clr-highlight-600);
   color: #fff;
+  font-weight: bolder;
 }
 
 .keyboard {
+  margin: 1rem;
   width: 100%;
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   grid-template-areas:
-    "btn1  btn2 "
-    "btn3  btn4 "
-    "btn5  . ";
+    "btn1  btn2"
+    "btn3  btn4"
+    "btn5  btn6"
+    "clear clear";
   gap: 1rem;
 }
 
@@ -101,4 +123,10 @@ input {
 }
 .primary-btn:nth-child(5) {
   grid-area: btn5;
+}
+.primary-btn:nth-child(6) {
+  grid-area: btn6;
+}
+.primary-btn:nth-child(7) {
+  grid-area: clear;
 }
